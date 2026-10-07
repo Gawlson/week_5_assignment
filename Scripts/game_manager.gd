@@ -6,8 +6,9 @@ var score = 0
 const EXPLOSION_SCENE = preload("res://scenes/explosion.tscn")
 
 func add_point():
-	score += 1
-	score_label.text = "You collected\n" + str(score) + " coins."
+	pass
+	#score += 1
+#a	score_label.text = "You collected\n" + str(score) + " coins."
 
 func explode(pos):
 	var explosion = EXPLOSION_SCENE.instantiate()
