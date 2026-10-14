@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://ctpg4l1kqljjs"
+
+[deps]
+
+files=["res://GodotTranslation - Sheet1(2).english.translation", "res://GodotTranslation - Sheet1(2).spanish.translation"]
+
+source_file="res://GodotTranslation - Sheet1(2).csv"
+dest_files=["res://GodotTranslation - Sheet1(2).english.translation", "res://GodotTranslation - Sheet1(2).spanish.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

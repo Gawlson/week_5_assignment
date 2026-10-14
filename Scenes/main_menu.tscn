@@ -1,0 +1,136 @@
+[gd_scene format=3 uid="uid://c8acanknmjgjl"]
+
+[ext_resource type="Script" uid="uid://c3aj8w0aaowra" path="res://Scripts/main_menu.gd" id="1_48xlc"]
+[ext_resource type="Texture2D" uid="uid://djiun6a0bcs8l" path="res://Assets/sprites/UI_spritesheet.png" id="2_1ehe0"]
+[ext_resource type="PackedScene" uid="uid://bfbikjd83ov02" path="res://Scenes/fade_transition.tscn" id="2_7vrkn"]
+[ext_resource type="Texture2D" uid="uid://21eige6psaax" path="res://Assets/sprites/BackgroundMenu.png" id="2_n45e2"]
+[ext_resource type="FontFile" uid="uid://cwocx3mddbgn6" path="res://Assets/fonts/PixelOperator8.ttf" id="3_ce3w2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ehe0"]
+atlas = ExtResource("2_1ehe0")
+region = Rect2(11, 11, 26, 28)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1vivr"]
+texture = SubResource("AtlasTexture_1ehe0")
+texture_margin_left = 4.0
+texture_margin_right = 4.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1ehe0"]
+load_path = "res://.godot/imported/UI_spritesheet.png-8d3bb76320b6f040be55abf02eaa92e4.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8vrlf"]
+atlas = SubResource("CompressedTexture2D_1ehe0")
+region = Rect2(107, 11, 26, 26)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1ehe0"]
+texture = SubResource("AtlasTexture_8vrlf")
+texture_margin_left = 4.0
+texture_margin_right = 4.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ce3w2"]
+atlas = ExtResource("2_1ehe0")
+region = Rect2(59, 11, 26, 26)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ce3w2"]
+texture = SubResource("AtlasTexture_ce3w2")
+texture_margin_left = 4.0
+texture_margin_right = 4.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_1vivr"]
+font = ExtResource("3_ce3w2")
+font_size = 29
+font_color = Color(0, 0, 0, 1)
+
+[node name="Main Menu" type="Node2D" unique_id=278170191]
+script = ExtResource("1_48xlc")
+
+[node name="BackgroundMenu" type="Sprite2D" parent="." unique_id=310941167]
+position = Vector2(568, 324)
+scale = Vector2(1.1099632, 1.0761892)
+texture = ExtResource("2_n45e2")
+
+[node name="Button Manager" type="Control" parent="." unique_id=1787062730]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Start" type="Button" parent="Button Manager" unique_id=1907305063]
+layout_mode = 0
+offset_left = 312.00003
+offset_top = 160.0
+offset_right = 499.00003
+offset_bottom = 217.0
+scale = Vector2(1.7323086, 1.6901299)
+theme_override_colors/icon_pressed_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_1vivr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_1ehe0")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ce3w2")
+
+[node name="Label" type="Label" parent="Button Manager/Start" unique_id=1294748904]
+layout_mode = 0
+offset_left = 5.7726135
+offset_top = 4.1416855
+offset_right = 182.99278
+offset_bottom = 48.516983
+text = "Start"
+label_settings = SubResource("LabelSettings_1vivr")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Options" type="Button" parent="Button Manager" unique_id=1872108859]
+layout_mode = 0
+offset_left = 375.00003
+offset_top = 297.0
+offset_right = 562.0
+offset_bottom = 351.0
+scale = Vector2(1.7323086, 1.6901299)
+theme_override_styles/normal = SubResource("StyleBoxTexture_1vivr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_1ehe0")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ce3w2")
+
+[node name="Label" type="Label" parent="Button Manager/Options" unique_id=1830249920]
+layout_mode = 0
+offset_left = 3.4635773
+offset_top = 3.5500183
+offset_right = 184.72458
+offset_bottom = 49.0
+text = "Options"
+label_settings = SubResource("LabelSettings_1vivr")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Quit" type="Button" parent="Button Manager" unique_id=1002962011]
+layout_mode = 0
+offset_left = 469.0
+offset_top = 431.0
+offset_right = 659.0
+offset_bottom = 479.0
+scale = Vector2(1.7323086, 1.6901299)
+theme_override_styles/normal = SubResource("StyleBoxTexture_1vivr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_1ehe0")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ce3w2")
+
+[node name="Label" type="Label" parent="Button Manager/Quit" unique_id=254614905]
+layout_mode = 0
+offset_left = 4.6181335
+offset_top = 2.958374
+offset_right = 185.87915
+offset_bottom = 40.825287
+text = "Quit"
+label_settings = SubResource("LabelSettings_1vivr")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="fade_transition" parent="." unique_id=657986233 instance=ExtResource("2_7vrkn")]
+visible = false
+
+[node name="fade_timer" type="Timer" parent="fade_transition" unique_id=2021694132]
+
+[connection signal="pressed" from="Button Manager/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Button Manager/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Button Manager/Quit" to="." method="_on_quit_pressed"]
+[connection signal="timeout" from="fade_transition/fade_timer" to="." method="_on_fade_timer_timeout"]
