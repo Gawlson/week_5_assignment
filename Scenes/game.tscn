@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ds2c1u7ova4rv" path="res://Scenes/killzone.tscn" id="5_iihcc"]
 [ext_resource type="PackedScene" uid="uid://buiflr5cf2w6b" path="res://Scenes/slime.tscn" id="6_j5cso"]
 [ext_resource type="FontFile" uid="uid://cwocx3mddbgn6" path="res://Assets/fonts/PixelOperator8.ttf" id="7_mqdg1"]
+[ext_resource type="PackedScene" uid="uid://dnb1t1tpqw41g" path="res://pause.tscn" id="8_v158k"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kymbd"]
 particle_flag_disable_z = true
@@ -339,3 +340,5 @@ position = Vector2(577, -127)
 
 [node name="Coin4" parent="." unique_id=536232000 instance=ExtResource("4_f2jo4")]
 position = Vector2(569, -137)
+
+[node name="Pause" parent="." unique_id=1288267995 instance=ExtResource("8_v158k")]
